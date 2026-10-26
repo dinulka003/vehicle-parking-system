@@ -2,10 +2,10 @@ package VehicleParkingSystem;
 
 public class ParkingSlot {
 
-    private String slotId;
+    private final String slotId;
     private boolean isAvailable;
 
-    ParkingSlot(String slotId){
+    public ParkingSlot(String slotId){
         this.slotId = slotId;
         isAvailable = true;
     }
