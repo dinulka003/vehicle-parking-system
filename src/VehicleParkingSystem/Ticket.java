@@ -1,0 +1,46 @@
+package VehicleParkingSystem;
+
+import java.time.LocalDateTime;
+import java.time.Duration;
+
+public class Ticket {
+    private final String ticketId;
+    private final Vehicle vehicle;
+    private final ParkingSlot slot;
+    private final LocalDateTime entryTime;
+
+    public Ticket(String ticketId, Vehicle vehicle, ParkingSlot slot) {
+        this.ticketId = ticketId;
+        this.slot = slot;
+        this.vehicle = vehicle;
+        this.entryTime = LocalDateTime.now();
+    }
+
+    public String getTicketId() {
+        return ticketId;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public ParkingSlot getSlot() {
+        return slot;
+    }
+
+    public LocalDateTime getEntryTime() {
+        return entryTime;
+    }
+
+    public int getHours() {
+        Duration d = Duration.between(entryTime, LocalDateTime.now());
+        long minutes = d.toMinutes();
+
+        int hours = (int) ((minutes + 59) / 60);
+
+        if (hours < 1) {
+            hours = 1;
+        }
+        return hours;
+    }
+}
