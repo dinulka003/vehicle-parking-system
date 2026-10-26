@@ -1,8 +1,8 @@
 package VehicleParkingSystem;
 
-public class MotorBike extends Vehicle {
+public class Motorbike extends Vehicle {
 
-    public MotorBike(String plateNumber,String ownerName){
+    public Motorbike(String plateNumber,String ownerName){
         super(plateNumber,ownerName);
     }
 
