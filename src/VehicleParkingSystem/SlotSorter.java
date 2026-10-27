@@ -56,7 +56,9 @@ public class SlotSorter {
         if (a.isAvailable() != b.isAvailable()) {
             return a.isAvailable() ? -1 : 1;
         }
-        return a.getSlotId().compareTo(b.getSlotId());
+        int numA = Integer.parseInt(a.getSlotId().substring(1));
+        int numB = Integer.parseInt(b.getSlotId().substring(1));
+        return Integer.compare(numA, numB);
     }
 }
 
